@@ -515,75 +515,216 @@ button {
 
     margin-top: 12px;
 }
-/* =========================
-   8. DOCTORS
-   ========================= */
+
+/* ========================================
+   DOCTORS SECTION
+======================================== */
 
 .doctors-section {
-    background: var(--light-bg);
+    padding: 110px 0;
+    background: #f7f9fc;
 }
+
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.doctors-section .section-heading {
+    max-width: 760px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.doctors-section .section-heading span {
+    display: inline-block;
+    margin-bottom: 12px;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.doctors-section .section-heading h2 {
+    margin: 0 0 18px;
+}
+
+.doctors-section .section-heading p {
+    max-width: 650px;
+    margin: 0 auto;
+
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   DOCTORS GRID
+======================================== */
 
 .doctors-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
+    gap: 28px;
 }
+
+
+/* ========================================
+   DOCTOR CARD
+======================================== */
 
 .doctor-card {
+    position: relative;
+
     overflow: hidden;
 
-    background: var(--white);
+    background: #ffffff;
 
-    border: 1px solid var(--border);
+    border-radius: 20px;
 
-    border-radius: var(--radius);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.055);
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
+.doctor-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.10);
+}
+
+
+/* ========================================
+   DOCTOR IMAGE
+======================================== */
+
 .doctor-image {
+    position: relative;
+
+    width: 100%;
     height: 320px;
 
-    background: #e9f2ed;
-
     overflow: hidden;
+
+    background: #eef2f6;
 }
 
 .doctor-image img {
     width: 100%;
     height: 100%;
 
+    display: block;
+
     object-fit: cover;
+    object-position: center top;
+
+    transition: transform 0.5s ease;
 }
 
+.doctor-card:hover .doctor-image img {
+    transform: scale(1.04);
+}
+
+
+/* ========================================
+   DOCTOR INFORMATION
+======================================== */
+
 .doctor-info {
-    padding: 25px;
+    padding: 25px 26px 28px;
 }
 
 .doctor-info span {
-    color: var(--primary-green);
+    display: inline-block;
 
-    font-size: 12px;
-    font-weight: 700;
+    margin-bottom: 10px;
 
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.1px;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .doctor-info h3 {
-    color: var(--dark);
+    margin: 0 0 10px;
 
     font-size: 21px;
-
-    margin: 8px 0;
+    line-height: 1.3;
 }
 
 .doctor-info p {
+    margin: 0;
+
     font-size: 14px;
+    line-height: 1.7;
 }
 
+
+/* ========================================
+   SUBTLE CARD TOP ACCENT
+======================================== */
+
+.doctor-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    z-index: 2;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .doctors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+    .doctors-section {
+        padding: 80px 0;
+    }
+
+    .doctors-section .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .doctors-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .doctor-image {
+        height: 340px;
+    }
+
+    .doctor-info {
+        padding: 23px 22px 25px;
+    }
+
+}
 
 /* =========================
    9. WHY CHOOSE US
