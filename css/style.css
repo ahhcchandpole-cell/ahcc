@@ -583,52 +583,392 @@ button {
 
 }
 /* =========================
-   7. ABOUT
-   ========================= */
+   
+/* ========================================
+   ABOUT AHHC SECTION
+======================================== */
 
-.about-grid {
+.about-section {
+    padding: 110px 0;
+    background: #f7f9fc;
+}
+
+
+/* ========================================
+   ABOUT LAYOUT
+======================================== */
+
+.about-layout {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.05fr 0.95fr;
 
     align-items: center;
 
-    gap: 70px;
+    gap: 75px;
 }
 
-.about-image {
-    min-height: 450px;
+
+/* ========================================
+   ABOUT IMAGE SLIDER
+======================================== */
+
+.about-gallery {
+    width: 100%;
+}
+
+.about-slider {
+    position: relative;
+
+    width: 100%;
+    height: 560px;
 
     overflow: hidden;
 
-    border-radius: 25px;
+    border-radius: 24px;
 
-    background: var(--light-green);
+    background: #e9eef3;
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.10);
 }
 
-.about-image img {
+
+/* ========================================
+   SLIDES
+======================================== */
+
+.about-slide {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.9s ease,
+        visibility 0.9s ease;
+}
+
+.about-slide.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    z-index: 1;
+}
+
+
+/* ========================================
+   SLIDE IMAGES
+======================================== */
+
+.about-slide img {
     width: 100%;
     height: 100%;
 
+    display: block;
+
     object-fit: cover;
+
+    transform: scale(1.04);
+
+    transition:
+        transform 5s ease;
 }
 
-.about-content h2 {
-    margin-bottom: 25px;
+.about-slide.active img {
+    transform: scale(1);
 }
 
-.about-content p {
-    margin-bottom: 18px;
 
-    font-size: 16px;
+/* ========================================
+   SLIDE OVERLAY
+======================================== */
+
+.about-slider::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 55%,
+            rgba(0, 0, 0, 0.30)
+        );
 }
 
-.text-button {
+
+/* ========================================
+   SLIDE INDICATORS
+======================================== */
+
+.about-dots {
+    position: absolute;
+
+    left: 28px;
+    bottom: 25px;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.about-dot {
+    width: 9px;
+    height: 9px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    cursor: pointer;
+
+    transition:
+        width 0.3s ease,
+        background 0.3s ease;
+}
+
+.about-dot.active {
+    width: 28px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+
+/* ========================================
+   ABOUT CONTENT
+======================================== */
+
+.about-content {
+    max-width: 600px;
+}
+
+.about-label {
     display: inline-block;
 
-    margin-top: 12px;
+    margin-bottom: 15px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
 }
 
+
+.about-content h2 {
+    margin: 0 0 23px;
+
+    font-size: 42px;
+
+    line-height: 1.16;
+
+    letter-spacing: -0.5px;
+}
+
+
+.about-content p {
+    margin: 0 0 17px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+.about-content .about-intro {
+    font-size: 17px;
+
+    line-height: 1.75;
+}
+
+
+/* ========================================
+   MORE ABOUT CONTENT
+======================================== */
+
+.more-about-content {
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        max-height 0.6s ease,
+        opacity 0.4s ease;
+}
+
+.more-about-content.open {
+    max-height: 500px;
+
+    opacity: 1;
+
+    margin-top: 5px;
+}
+
+
+/* ========================================
+   MORE ABOUT BUTTON
+======================================== */
+
+.more-about-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 14px;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        gap 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.more-about-button:hover {
+    gap: 17px;
+
+    opacity: 0.75;
+}
+
+.more-about-arrow {
+    font-size: 18px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.more-about-button.active .more-about-arrow {
+    transform: rotate(90deg);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .about-layout {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .about-content {
+        max-width: 750px;
+    }
+
+    .about-slider {
+        height: 520px;
+    }
+
+    .about-content h2 {
+        font-size: 36px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+    .about-section {
+        padding: 80px 0;
+    }
+
+    .about-layout {
+        gap: 38px;
+    }
+
+    .about-slider {
+        height: 420px;
+
+        border-radius: 18px;
+    }
+
+    .about-content h2 {
+        font-size: 31px;
+
+        line-height: 1.2;
+    }
+
+    .about-content .about-intro {
+        font-size: 16px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+    .about-dots {
+        left: 20px;
+
+        bottom: 20px;
+    }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+    .about-slider {
+        height: 360px;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
+    }
+
+}
 /* ========================================
    DOCTORS SECTION
 ======================================== */
