@@ -1,6 +1,4 @@
-// ========================================
-// AHHC CHANDPOLE - MAIN JAVASCRIPT
-// ========================================
+alert("AHHC JavaScript is working");
 
 document.addEventListener("DOMContentLoaded", () => {
 
