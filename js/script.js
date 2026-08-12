@@ -1,8 +1,3 @@
-
-// AHHC Chandpole Website
-// Main JavaScript file
-
-
 // ========================================
 // AHHC CHANDPOLE - MAIN JAVASCRIPT
 // ========================================
@@ -14,13 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // ========================================
 
     const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-menu");
+    const mainNav = document.querySelector(".main-nav");
 
-    if (menuToggle && navMenu) {
+    if (menuToggle && mainNav) {
 
         menuToggle.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
+
+            mainNav.classList.toggle("active");
             menuToggle.classList.toggle("active");
+
         });
 
     }
@@ -30,14 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // CLOSE MOBILE MENU AFTER CLICKING A LINK
     // ========================================
 
-    const navLinks = document.querySelectorAll(".nav-menu a");
+    const navLinks = document.querySelectorAll(".main-nav a");
 
     navLinks.forEach(link => {
 
         link.addEventListener("click", () => {
 
-            if (navMenu) {
-                navMenu.classList.remove("active");
+            if (mainNav) {
+                mainNav.classList.remove("active");
             }
 
             if (menuToggle) {
