@@ -1,6 +1,8 @@
-alert("AHHC JavaScript is working");
+// ========================================
+// AHHC CHANDPOLE - MAIN JAVASCRIPT
+// ========================================
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
     // ========================================
     // MOBILE NAVIGATION
@@ -11,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (menuToggle && mainNav) {
 
-        menuToggle.addEventListener("click", () => {
+        menuToggle.addEventListener("click", function () {
 
             mainNav.classList.toggle("active");
             menuToggle.classList.toggle("active");
@@ -22,14 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ========================================
-    // CLOSE MOBILE MENU AFTER CLICKING A LINK
+    // CLOSE MOBILE MENU AFTER CLICKING LINK
     // ========================================
 
     const navLinks = document.querySelectorAll(".main-nav a");
 
-    navLinks.forEach(link => {
+    navLinks.forEach(function (link) {
 
-        link.addEventListener("click", () => {
+        link.addEventListener("click", function () {
 
             if (mainNav) {
                 mainNav.classList.remove("active");
@@ -48,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // SMOOTH SCROLLING
     // ========================================
 
-    navLinks.forEach(link => {
+    navLinks.forEach(function (link) {
 
         link.addEventListener("click", function (event) {
 
@@ -74,5 +76,26 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
+
+
+    // ========================================
+    // HEADER SHADOW ON SCROLL
+    // ========================================
+
+    const header = document.querySelector(".site-header");
+
+    if (header) {
+
+        window.addEventListener("scroll", function () {
+
+            if (window.scrollY > 20) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+
+        });
+
+    }
 
 });
