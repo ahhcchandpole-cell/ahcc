@@ -4,6 +4,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
+
     // ========================================
     // MOBILE NAVIGATION
     // ========================================
@@ -15,61 +16,97 @@ document.addEventListener("DOMContentLoaded", function () {
 
         menuToggle.addEventListener("click", function () {
 
-            mainNav.classList.toggle("active");
-            menuToggle.classList.toggle("active");
+            const isOpen =
+                mainNav.classList.toggle("active");
+
+            menuToggle.classList.toggle(
+                "active",
+                isOpen
+            );
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        });
+
+
+        // Close menu when navigation link is clicked
+
+        const navLinks =
+            mainNav.querySelectorAll("a");
+
+        navLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                mainNav.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+
+        // Close menu if user clicks outside it
+
+        document.addEventListener("click", function (event) {
+
+            if (
+                !mainNav.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
+
+                mainNav.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
 
         });
 
     }
-
-
-    // ========================================
-    // CLOSE MOBILE MENU AFTER CLICKING LINK
-    // ========================================
-
-    const navLinks = document.querySelectorAll(".main-nav a");
-
-    navLinks.forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            if (mainNav) {
-                mainNav.classList.remove("active");
-            }
-
-            if (menuToggle) {
-                menuToggle.classList.remove("active");
-            }
-
-        });
-
-    });
 
 
     // ========================================
     // SMOOTH SCROLLING
     // ========================================
 
+    const navLinks =
+        document.querySelectorAll(
+            '.main-nav a[href^="#"]'
+        );
+
     navLinks.forEach(function (link) {
 
         link.addEventListener("click", function (event) {
 
-            const targetId = this.getAttribute("href");
+            const targetId =
+                this.getAttribute("href");
 
-            if (targetId && targetId.startsWith("#")) {
+            const targetSection =
+                document.querySelector(targetId);
 
-                const targetSection = document.querySelector(targetId);
+            if (targetSection) {
 
-                if (targetSection) {
+                event.preventDefault();
 
-                    event.preventDefault();
-
-                    targetSection.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-
-                }
+                targetSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
 
             }
 
@@ -79,43 +116,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ========================================
-    // HEADER SHADOW ON SCROLL
+    // ABOUT AHHC SLIDESHOW
     // ========================================
 
-    const header = document.querySelector(".site-header");
+    const slides =
+        document.querySelectorAll(".about-slide");
 
-    if (header) {
+    const dots =
+        document.querySelectorAll(".about-dot");
 
-        window.addEventListener("scroll", function () {
-
-            if (window.scrollY > 20) {
-                header.classList.add("scrolled");
-            } else {
-                header.classList.remove("scrolled");
-            }
-
-        });
-
-    }
-
-});
-/* ========================================
-   AHHC ABOUT SLIDESHOW
-======================================== */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const slides = document.querySelectorAll(".about-slide");
-    const dots = document.querySelectorAll(".about-dot");
-    const slider = document.querySelector(".about-slider");
+    const slider =
+        document.querySelector(".about-slider");
 
     let currentSlide = 0;
     let slideInterval;
 
-
-    /* ========================================
-       SHOW SLIDE
-    ======================================== */
 
     function showSlide(index) {
 
@@ -129,7 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-
         dots.forEach(function (dot) {
 
             dot.classList.remove("active");
@@ -139,35 +153,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
         slides[index].classList.add("active");
 
+
         if (dots[index]) {
+
             dots[index].classList.add("active");
+
         }
+
 
         currentSlide = index;
 
     }
 
 
-    /* ========================================
-       NEXT SLIDE
-    ======================================== */
-
     function nextSlide() {
 
-        let nextIndex = currentSlide + 1;
+        let nextIndex =
+            currentSlide + 1;
 
         if (nextIndex >= slides.length) {
+
             nextIndex = 0;
+
         }
 
         showSlide(nextIndex);
 
     }
 
-
-    /* ========================================
-       START AUTOMATIC SLIDESHOW
-    ======================================== */
 
     function startSlideshow() {
 
@@ -181,10 +194,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ========================================
-       DOT NAVIGATION
-    ======================================== */
-
     dots.forEach(function (dot, index) {
 
         dot.addEventListener("click", function () {
@@ -197,10 +206,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
-    /* ========================================
-       PAUSE ON HOVER
-    ======================================== */
 
     if (slider) {
 
@@ -226,10 +231,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ========================================
-       INITIALIZE SLIDESHOW
-    ======================================== */
-
     if (slides.length > 0) {
 
         showSlide(0);
@@ -239,15 +240,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ========================================
-       MORE ABOUT AHHC
-    ======================================== */
+    // ========================================
+    // MORE ABOUT AHHC
+    // ========================================
 
     const moreButton =
-        document.getElementById("more-about-button");
+        document.getElementById(
+            "more-about-button"
+        );
 
     const moreContent =
-        document.getElementById("more-about-content");
+        document.getElementById(
+            "more-about-content"
+        );
 
 
     if (moreButton && moreContent) {
@@ -257,38 +262,67 @@ document.addEventListener("DOMContentLoaded", function () {
             function () {
 
                 const isOpen =
-                    moreContent.classList.contains("open");
+                    moreContent.classList.contains(
+                        "open"
+                    );
 
 
                 if (isOpen) {
 
-                    moreContent.classList.remove("open");
+                    moreContent.classList.remove(
+                        "open"
+                    );
 
-                    moreButton.classList.remove("active");
+                    moreButton.classList.remove(
+                        "active"
+                    );
 
                     moreButton.setAttribute(
                         "aria-expanded",
                         "false"
                     );
 
-                    moreButton.querySelector(
-                        "span:first-child"
-                    ).textContent = "More About AHHC";
+
+                    const text =
+                        moreButton.querySelector(
+                            "span:first-child"
+                        );
+
+                    if (text) {
+
+                        text.textContent =
+                            "More About AHHC";
+
+                    }
+
 
                 } else {
 
-                    moreContent.classList.add("open");
+                    moreContent.classList.add(
+                        "open"
+                    );
 
-                    moreButton.classList.add("active");
+                    moreButton.classList.add(
+                        "active"
+                    );
 
                     moreButton.setAttribute(
                         "aria-expanded",
                         "true"
                     );
 
-                    moreButton.querySelector(
-                        "span:first-child"
-                    ).textContent = "Show Less";
+
+                    const text =
+                        moreButton.querySelector(
+                            "span:first-child"
+                        );
+
+                    if (text) {
+
+                        text.textContent =
+                            "Show Less";
+
+                    }
 
                 }
 
