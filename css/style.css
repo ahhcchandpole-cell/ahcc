@@ -1508,16 +1508,14 @@ button {
 
 }
 
-/* =========================
-   11. APPOINTMENT CTA
-   ========================= */
+/* ========================================
+   APPOINTMENT CTA
+======================================== */
 
 .appointment-section {
     padding: 75px 0;
 
-    background: var(--primary-green);
-
-    color: var(--white);
+    background: #f1f5f9;
 }
 
 .appointment-container {
@@ -1526,141 +1524,296 @@ button {
     align-items: center;
     justify-content: space-between;
 
-    gap: 40px;
+    gap: 45px;
 }
 
-.appointment-container span {
+.appointment-content {
+    max-width: 700px;
+}
+
+.appointment-content > span {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
     font-size: 12px;
     font-weight: 800;
 
     letter-spacing: 2px;
-
-    color: #c9ead8;
 }
 
-.appointment-container h2 {
-    margin: 10px 0;
+.appointment-content h2 {
+    margin: 0 0 15px;
 
-    font-size: clamp(30px, 4vw, 42px);
-
-    line-height: 1.15;
+    font-size: 34px;
+    line-height: 1.2;
 }
 
-.appointment-container p {
-    color: #d9ede3;
+.appointment-content p {
+    max-width: 650px;
+
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.75;
 }
 
 .appointment-buttons {
     display: flex;
+
+    align-items: center;
 
     gap: 12px;
 
     flex-shrink: 0;
 }
 
-.appointment-buttons .secondary-button {
-    border-color: rgba(255, 255, 255, 0.5);
+
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
+.contact-section {
+    padding: 110px 0;
+
+    background: #ffffff;
 }
-
-
-/* =========================
-   12. CONTACT
-   ========================= */
 
 .contact-grid {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.9fr 1.1fr;
 
-    gap: 70px;
+    gap: 75px;
 
-    align-items: center;
+    align-items: stretch;
+}
+
+
+/* ========================================
+   CONTACT CONTENT
+======================================== */
+
+.contact-content {
+    max-width: 600px;
+}
+
+.contact-content .section-label {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
 }
 
 .contact-content h2 {
-    margin-bottom: 18px;
+    margin: 0 0 18px;
+
+    font-size: 42px;
+    line-height: 1.2;
 }
 
-.contact-content > p {
-    margin-bottom: 35px;
+.contact-intro {
+    margin: 0 0 38px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
 }
+
+
+/* ========================================
+   CONTACT DETAILS
+======================================== */
 
 .contact-details {
     display: grid;
 
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px 35px;
 }
 
 .contact-item {
-    padding-bottom: 18px;
+    padding-bottom: 20px;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.contact-item strong {
-    display: block;
+.contact-item-label {
+    margin-bottom: 8px;
 
-    color: var(--dark);
+    font-size: 10px;
 
-    font-size: 14px;
+    font-weight: 800;
 
-    margin-bottom: 4px;
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
 }
 
 .contact-item a {
-    color: var(--primary-green);
+    font-size: 15px;
 
-    font-weight: 600;
+    font-weight: 700;
+
+    text-decoration: none;
 }
 
 .contact-item p {
-    max-width: 500px;
+    margin: 0;
 
     font-size: 14px;
+
+    line-height: 1.7;
 }
 
-.map-container {
-    min-height: 430px;
 
-    border-radius: 25px;
+/* ========================================
+   MAP / LOCATION CARD
+======================================== */
+
+.map-container {
+    min-height: 500px;
 
     overflow: hidden;
 
-    background: var(--light-green);
-
-    border: 1px solid var(--border);
-}
-
-.map-placeholder {
-    height: 100%;
-    min-height: 430px;
-
-    padding: 50px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    border-radius: 22px;
 
     background:
         linear-gradient(
             135deg,
-            #edf7f1,
-            #dceee4
+            #e9eef3,
+            #dce5ec
         );
 }
 
+.map-placeholder {
+    height: 100%;
+
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    padding: 55px;
+}
+
+.map-placeholder > span {
+    margin-bottom: 13px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
 .map-placeholder h3 {
-    color: var(--dark);
+    margin: 0 0 14px;
 
-    font-size: 28px;
+    font-size: 30px;
 
-    margin-bottom: 12px;
+    line-height: 1.25;
 }
 
 .map-placeholder p {
-    margin-bottom: 25px;
+    max-width: 420px;
+
+    margin: 0 0 28px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
 }
 
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .appointment-container {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .contact-content {
+        max-width: 750px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .appointment-section {
+        padding: 60px 0;
+    }
+
+    .appointment-content h2 {
+        font-size: 29px;
+    }
+
+    .appointment-buttons {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .appointment-buttons a {
+        text-align: center;
+    }
+
+    .contact-section {
+        padding: 80px 0;
+    }
+
+    .contact-content h2 {
+        font-size: 32px;
+    }
+
+    .contact-details {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .map-container,
+    .map-placeholder {
+        min-height: 400px;
+    }
+
+    .map-placeholder {
+        padding: 35px;
+    }
+
+}
 
 /* =========================
    13. FOOTER
