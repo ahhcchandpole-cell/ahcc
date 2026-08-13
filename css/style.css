@@ -2299,7 +2299,56 @@ button {
     }
 
 }
+/* =========================
+   MOBILE MENU
+========================= */
 
+.main-nav.active {
+    display: flex;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 0;
+
+    padding: 15px 4% 20px;
+
+    background: var(--white);
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.main-nav.active a {
+    width: 100%;
+
+    padding: 13px 0;
+
+    font-size: 15px;
+}
+
+.menu-toggle.active {
+    font-size: 0;
+}
+
+.menu-toggle.active::before {
+    content: "×";
+
+    font-size: 32px;
+
+    line-height: 1;
+}
 
 /* ========================================
    HEADER SCROLL EFFECT
