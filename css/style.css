@@ -1820,46 +1820,72 @@ button {
    ========================= */
 
 .site-footer {
-    padding-top: 70px;
+    padding-top: 75px;
 
     background: #082d20;
 
     color: #c8d8d1;
 }
 
+
+/* =========================
+   FOOTER GRID
+========================= */
+
 .footer-grid {
     display: grid;
 
     grid-template-columns: 2fr 1fr 1fr;
 
-    gap: 60px;
+    gap: 65px;
 
-    padding-bottom: 55px;
+    padding-bottom: 60px;
 }
 
-.footer-about img {
-    width: 190px;
 
-    margin-bottom: 20px;
+/* =========================
+   FOOTER ABOUT
+========================= */
+
+.footer-about img {
+    width: 185px;
+
+    margin-bottom: 22px;
 
     filter: brightness(0) invert(1);
 }
 
 .footer-about p {
-    max-width: 360px;
+    max-width: 390px;
+
+    margin: 0 0 7px;
 
     font-size: 14px;
 
-    margin-bottom: 6px;
+    line-height: 1.7;
 }
+
+
+/* =========================
+   FOOTER HEADINGS
+========================= */
 
 .footer-grid h3 {
+    margin: 0 0 22px;
+
     color: var(--white);
 
-    font-size: 16px;
+    font-size: 15px;
 
-    margin-bottom: 20px;
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
 }
+
+
+/* =========================
+   FOOTER LINKS
+========================= */
 
 .footer-links,
 .footer-contact {
@@ -1869,45 +1895,76 @@ button {
 
     align-items: flex-start;
 
-    gap: 10px;
+    gap: 11px;
 }
 
 .footer-links a,
 .footer-contact a {
+    color: #c8d8d1;
+
     font-size: 14px;
 
-    transition: 0.2s ease;
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .footer-links a:hover,
 .footer-contact a:hover {
     color: var(--white);
+
+    transform: translateX(3px);
 }
 
+
+/* =========================
+   FOOTER CONTACT
+========================= */
+
 .footer-contact p {
+    margin: 0;
+
+    color: #c8d8d1;
+
     font-size: 14px;
+
+    line-height: 1.7;
 }
+
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
 
 .footer-bottom {
     padding: 22px 0;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top:
+        1px solid rgba(255, 255, 255, 0.1);
 
     text-align: center;
 }
 
 .footer-bottom p {
-    font-size: 12px;
+    margin: 0;
 
     color: #9fb4aa;
+
+    font-size: 12px;
+
+    line-height: 1.6;
 }
 
 
 /* =========================
    14. MOBILE NAVIGATION
-   ========================= */
+========================= */
 
 @media (max-width: 900px) {
+
+    /* Header */
 
     .main-nav,
     .header-button {
@@ -1926,27 +1983,100 @@ button {
         width: 165px;
     }
 
+
+    /* Quick Info */
+
     .quick-info-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+
+    /* Why Us */
 
     .why-us-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
+
+    /* Doctors */
+
     .doctors-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .about-grid,
-    .contact-grid {
-        gap: 40px;
+
+    /* About */
+
+    .about-layout {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
     }
+
+
+    /* Contact */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    /* Appointment */
 
     .appointment-container {
         flex-direction: column;
+
         align-items: flex-start;
     }
+
+
+    /* Footer */
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 45px;
+    }
+
+    .footer-about {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE FOOTER
+========================= */
+
+@media (max-width: 600px) {
+
+    .site-footer {
+        padding-top: 60px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 38px;
+
+        padding-bottom: 45px;
+    }
+
+    .footer-about {
+        grid-column: auto;
+    }
+
+    .footer-about img {
+        width: 165px;
+    }
+
+    .footer-bottom {
+        padding: 20px 15px;
+    }
+
 }
 
 
