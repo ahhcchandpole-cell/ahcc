@@ -2357,3 +2357,271 @@ button {
 .site-header.scrolled {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
+
+
+/* ========================================
+   PHYSIOTHERAPY & REHABILITATION SECTION
+======================================== */
+
+.physio-section {
+
+    padding: 110px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef8f3 0%,
+            #f7faf8 55%,
+            #ffffff 100%
+        );
+}
+
+
+/* ========================================
+   MAIN LAYOUT
+======================================== */
+
+.physio-layout {
+
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+/* ========================================
+   LEFT CONTENT
+======================================== */
+
+.physio-content {
+
+    max-width: 560px;
+}
+
+.physio-content .section-label {
+
+    margin-bottom: 15px;
+}
+
+.physio-content h2 {
+
+    margin: 0 0 22px;
+
+    color: var(--dark);
+
+    font-size: clamp(32px, 4vw, 45px);
+
+    line-height: 1.15;
+}
+
+.physio-content p {
+
+    margin-bottom: 17px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.physio-content .physio-intro {
+
+    font-size: 17px;
+
+    line-height: 1.75;
+}
+
+
+/* ========================================
+   PHYSIOTHERAPY BUTTON
+======================================== */
+
+.physio-button {
+
+    margin-top: 15px;
+
+    background: var(--primary-green);
+
+    color: var(--white);
+}
+
+.physio-button:hover {
+
+    background: var(--dark-green);
+
+    color: var(--white);
+}
+
+
+/* ========================================
+   SPECIALITY GRID
+======================================== */
+
+.physio-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ========================================
+   SPECIALITY CARD
+======================================== */
+
+.physio-card {
+
+    position: relative;
+
+    min-height: 245px;
+
+    padding: 30px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(7, 91, 59, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.physio-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 40px rgba(7, 91, 59, 0.11);
+}
+
+
+/* ========================================
+   ICON
+======================================== */
+
+.physio-icon {
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 15px;
+
+    background: var(--light-green);
+
+    font-size: 23px;
+}
+
+
+/* ========================================
+   CARD CONTENT
+======================================== */
+
+.physio-card h3 {
+
+    margin: 0 0 10px;
+
+    color: var(--dark);
+
+    font-size: 19px;
+
+    line-height: 1.35;
+}
+
+.physio-card p {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .physio-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .physio-content {
+
+        max-width: 750px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+    .physio-section {
+
+        padding: 80px 0;
+    }
+
+    .physio-layout {
+
+        gap: 38px;
+    }
+
+    .physio-content h2 {
+
+        font-size: 31px;
+
+        line-height: 1.2;
+    }
+
+    .physio-content .physio-intro {
+
+        font-size: 16px;
+    }
+
+    .physio-content p {
+
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+    .physio-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .physio-card {
+
+        min-height: auto;
+
+        padding: 27px;
+    }
+
+}
