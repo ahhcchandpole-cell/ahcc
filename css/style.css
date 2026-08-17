@@ -2660,106 +2660,303 @@ button {
 
         padding: 27px;
     }
-
-}
 /* =========================================================
-   PHYSIOTHERAPY SERVICE PAGE
+   AHHC - PHYSIOTHERAPY SERVICE PAGE
+   services/physiotherapy.html
    ========================================================= */
 
 
 /* =========================
-   PHYSIOTHERAPY HERO
+   1. RESET
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-green: #075b3b;
+    --dark-green: #03452d;
+
+    --dark: #17231f;
+    --text: #4f5d57;
+
+    --white: #ffffff;
+
+    --light-bg: #f7faf8;
+    --light-green: #eaf5ef;
+
+    --border: #dfe9e3;
+
+    --container-width: 1180px;
+
+    --radius: 18px;
+
+    --shadow: 0 12px 35px rgba(7, 91, 59, 0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: var(--text);
+
+    background: var(--white);
+
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: min(92%, var(--container-width));
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   2. HEADER
+   ========================= */
+
+.site-header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.header-container {
+    min-height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.logo img {
+    width: 190px;
+
+    height: auto;
+}
+
+.main-nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+}
+
+.main-nav a {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: var(--dark);
+
+    transition: 0.25s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-green);
+}
+
+.header-button {
+    background: var(--primary-green);
+
+    color: var(--white);
+
+    padding: 12px 21px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.header-button:hover {
+    background: var(--dark-green);
+
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+
+    background: none;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    color: var(--primary-green);
+}
+
+
+/* =========================
+   3. COMMON BUTTONS
+   ========================= */
+
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.primary-button {
+    background: var(--primary-green);
+
+    color: var(--white);
+}
+
+.primary-button:hover {
+    background: var(--dark-green);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 25px rgba(7, 91, 59, 0.18);
+}
+
+.secondary-button {
+    border: 1px solid var(--primary-green);
+
+    color: var(--primary-green);
+
+    background: transparent;
+}
+
+.secondary-button:hover {
+    background: var(--primary-green);
+
+    color: var(--white);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   4. SERVICE PAGE HERO
    ========================= */
 
 .service-page-hero {
     position: relative;
 
-    min-height: 570px;
+    min-height: 560px;
 
     display: flex;
+
     align-items: center;
+
+    overflow: hidden;
 
     background:
         linear-gradient(
             90deg,
-            rgba(3, 69, 45, 0.96) 0%,
-            rgba(3, 69, 45, 0.88) 45%,
-            rgba(3, 69, 45, 0.55) 100%
-        );
-
-    overflow: hidden;
-}
-
-.service-page-hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 520px;
-    height: 520px;
-
-    right: -180px;
-    top: -140px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255, 255, 255, 0.05);
-
-    pointer-events: none;
+            rgba(3, 69, 45, 0.94),
+            rgba(3, 69, 45, 0.76),
+            rgba(3, 69, 45, 0.35)
+        ),
+        url("../images/physiotherapy-hero.jpg")
+        center/cover no-repeat;
 }
 
 .service-page-hero-content {
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 760px;
-
-    padding: 85px 0;
-}
-
-.service-page-hero-content .section-label {
-    color: #d5f1e2;
-
-    margin-bottom: 18px;
-}
-
-.service-page-hero h1 {
-    margin: 0 0 24px;
+    max-width: 700px;
 
     color: var(--white);
 
-    font-size: clamp(40px, 5vw, 64px);
+    padding: 70px 0;
+}
+
+.service-page-hero .section-label {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: #d5f1e2;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.service-page-hero h1 {
+    font-size: clamp(40px, 5vw, 62px);
 
     line-height: 1.08;
 
-    letter-spacing: -1px;
+    margin-bottom: 24px;
+
+    color: var(--white);
 }
 
 .service-page-hero p {
-    max-width: 680px;
+    max-width: 650px;
 
-    margin: 0 0 32px;
+    margin-bottom: 32px;
 
-    color: #e5f1eb;
+    color: #e7f2ec;
 
     font-size: 18px;
 
-    line-height: 1.75;
+    line-height: 1.7;
 }
-
-
-/* =========================
-   HERO BUTTONS
-   ========================= */
 
 .service-page-hero .hero-buttons {
     display: flex;
 
-    flex-wrap: wrap;
+    align-items: center;
 
-    gap: 14px;
+    gap: 15px;
+
+    flex-wrap: wrap;
 }
 
 .service-page-hero .primary-button {
@@ -2768,19 +2965,31 @@ button {
     color: var(--primary-green);
 }
 
-.service-call-button {
-    border: 1px solid rgba(255, 255, 255, 0.65);
+.service-page-hero .primary-button:hover {
+    background: var(--light-green);
+
+    color: var(--dark-green);
+}
+
+.service-page-hero .secondary-button {
+    border-color: rgba(255, 255, 255, 0.7);
 
     color: var(--white);
 }
 
+.service-page-hero .secondary-button:hover {
+    background: var(--white);
+
+    color: var(--primary-green);
+}
+
 
 /* =========================
-   INTRODUCTION
+   5. INTRODUCTION
    ========================= */
 
 .service-intro-section {
-    padding: 100px 0;
+    padding: 95px 0;
 
     background: var(--white);
 }
@@ -2794,47 +3003,90 @@ button {
 }
 
 .service-intro-content .section-label {
-    margin-bottom: 14px;
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--primary-green);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
 }
 
 .service-intro-content h2 {
-    margin: 0 0 25px;
+    color: var(--dark);
 
+    font-size: clamp(32px, 4vw, 46px);
+
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+}
+
+.service-intro-content p {
+    max-width: 800px;
+
+    margin: 0 auto 17px;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   6. PHYSIOTHERAPY SERVICES
+   ========================= */
+
+.physio-services-section {
+    padding: 100px 0;
+
+    background: var(--light-bg);
+}
+
+.section-heading {
+    max-width: 750px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.section-heading span {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--primary-green);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
     color: var(--dark);
 
     font-size: clamp(32px, 4vw, 45px);
 
     line-height: 1.15;
+
+    margin-bottom: 18px;
 }
 
-.service-intro-content p {
-    max-width: 760px;
-
-    margin: 0 auto 16px;
-
+.section-heading p {
     font-size: 16px;
 
-    line-height: 1.85;
+    color: var(--text);
 }
 
 
 /* =========================
-   PHYSIOTHERAPY SPECIALITIES
+   7. PHYSIO SERVICE CARDS
    ========================= */
-
-.physio-services-section {
-    padding: 110px 0;
-
-    background: #f7f9fc;
-}
-
-.physio-services-section .section-heading {
-    max-width: 760px;
-
-    margin: 0 auto 60px;
-
-    text-align: center;
-}
 
 .physio-page-grid {
     display: grid;
@@ -2844,47 +3096,40 @@ button {
     gap: 25px;
 }
 
-
-/* =========================
-   PHYSIOTHERAPY CARDS
-   ========================= */
-
 .physio-page-card {
-    position: relative;
-
     padding: 35px;
 
     background: var(--white);
 
     border: 1px solid var(--border);
 
-    border-radius: 22px;
+    border-radius: var(--radius);
 
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.045);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03);
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .physio-page-card:hover {
-    transform: translateY(-7px);
+    transform: translateY(-6px);
 
-    box-shadow:
-        0 18px 40px rgba(7, 91, 59, 0.10);
+    border-color: #bcd8ca;
+
+    box-shadow: var(--shadow);
 }
 
 .physio-page-icon {
     width: 58px;
+
     height: 58px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 
     border-radius: 16px;
 
@@ -2894,46 +3139,57 @@ button {
 }
 
 .physio-page-card h3 {
-    margin: 0 0 13px;
-
     color: var(--dark);
 
     font-size: 22px;
 
     line-height: 1.3;
+
+    margin-bottom: 12px;
 }
 
 .physio-page-card p {
-    margin: 0 0 20px;
+    font-size: 15px;
 
-    font-size: 14px;
-
-    line-height: 1.75;
+    margin-bottom: 20px;
 }
 
 .physio-page-card ul {
-    margin: 0;
+    list-style: none;
 
-    padding-left: 20px;
+    display: grid;
+
+    gap: 9px;
 }
 
 .physio-page-card li {
-    margin-bottom: 8px;
+    position: relative;
 
-    color: var(--text);
+    padding-left: 22px;
 
     font-size: 14px;
-
-    line-height: 1.6;
 }
 
+.physio-page-card li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    color: var(--primary-green);
+
+    font-weight: 800;
+}
 
 /* =========================
-   BENEFITS SECTION
+   8. WHO CAN BENEFIT
    ========================= */
 
 .physio-benefits-section {
-    padding: 110px 0;
+    padding: 100px 0;
 
     background: var(--white);
 }
@@ -2943,78 +3199,96 @@ button {
 
     grid-template-columns: 0.9fr 1.1fr;
 
-    align-items: start;
-
     gap: 70px;
+
+    align-items: start;
 }
 
 .benefits-content {
-    max-width: 540px;
+    position: sticky;
+
+    top: 120px;
+}
+
+.benefits-content .section-label {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--primary-green);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
 }
 
 .benefits-content h2 {
-    margin: 0 0 20px;
-
     color: var(--dark);
 
-    font-size: clamp(32px, 4vw, 44px);
+    font-size: clamp(32px, 4vw, 45px);
 
     line-height: 1.15;
+
+    margin-bottom: 20px;
 }
 
 .benefits-content p {
-    font-size: 15px;
-
-    line-height: 1.8;
+    font-size: 16px;
 }
 
 .benefits-list {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 18px;
+    gap: 15px;
 }
 
 .benefit-item {
-    padding: 24px;
+    padding: 25px;
 
     border: 1px solid var(--border);
 
-    border-radius: 16px;
+    border-radius: var(--radius);
 
-    background: #f8faf9;
+    background: var(--light-bg);
+
+    transition: 0.25s ease;
+}
+
+.benefit-item:hover {
+    transform: translateX(5px);
+
+    border-color: #bcd8ca;
+
+    box-shadow: var(--shadow);
 }
 
 .benefit-item strong {
     display: block;
 
-    margin-bottom: 7px;
+    margin-bottom: 5px;
 
     color: var(--dark);
 
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .benefit-item span {
     display: block;
 
-    color: var(--text);
-
-    font-size: 13px;
-
-    line-height: 1.65;
+    font-size: 14px;
 }
 
 
 /* =========================
-   LOCAL PHYSIOTHERAPY
+   9. LOCAL PHYSIOTHERAPY
    ========================= */
 
 .local-physio-section {
     padding: 100px 0;
 
-    background: #eef8f3;
+    background: var(--light-bg);
 }
 
 .local-physio-content {
@@ -3025,47 +3299,51 @@ button {
     text-align: center;
 }
 
-.local-physio-content h2 {
-    margin: 0 0 20px;
+.local-physio-content .section-label {
+    display: inline-block;
 
+    margin-bottom: 12px;
+
+    color: var(--primary-green);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.local-physio-content h2 {
     color: var(--dark);
 
-    font-size: clamp(32px, 4vw, 44px);
+    font-size: clamp(32px, 4vw, 45px);
 
     line-height: 1.15;
+
+    margin-bottom: 22px;
 }
 
 .local-physio-content p {
-    max-width: 760px;
+    max-width: 800px;
 
-    margin: 0 auto 16px;
+    margin: 0 auto 17px;
 
-    font-size: 15px;
-
-    line-height: 1.8;
+    font-size: 16px;
 }
 
 .local-physio-content .primary-button {
     margin-top: 18px;
-
-    background: var(--primary-green);
-
-    color: var(--white);
-}
-
-.local-physio-content .primary-button:hover {
-    background: var(--dark-green);
 }
 
 
 /* =========================
-   FINAL CTA
+   10. SERVICE CTA
    ========================= */
 
 .service-page-cta {
-    padding: 80px 0;
+    padding: 75px 0;
 
-    background: var(--dark-green);
+    background: var(--primary-green);
 
     color: var(--white);
 }
@@ -3085,11 +3363,11 @@ button {
 }
 
 .service-cta-inner span {
-    display: block;
+    display: inline-block;
 
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 
-    color: #cce9da;
+    color: #c9ead8;
 
     font-size: 12px;
 
@@ -3099,7 +3377,7 @@ button {
 }
 
 .service-cta-inner h2 {
-    margin: 0 0 15px;
+    margin-bottom: 12px;
 
     color: var(--white);
 
@@ -3109,34 +3387,151 @@ button {
 }
 
 .service-cta-inner p {
-    margin: 0;
+    color: #d9ede3;
 
-    color: #d8e9e1;
-
-    font-size: 15px;
-
-    line-height: 1.7;
+    font-size: 16px;
 }
 
-.service-cta-inner .appointment-buttons {
+.service-page-cta .appointment-buttons {
     display: flex;
 
-    flex-shrink: 0;
-
-    flex-wrap: wrap;
-
     gap: 12px;
+
+    flex-shrink: 0;
+}
+
+.service-page-cta .primary-button {
+    background: var(--white);
+
+    color: var(--primary-green);
+}
+
+.service-page-cta .primary-button:hover {
+    background: var(--light-green);
+}
+
+.service-page-cta .secondary-button {
+    border-color: rgba(255, 255, 255, 0.6);
+
+    color: var(--white);
+}
+
+.service-page-cta .secondary-button:hover {
+    background: var(--white);
+
+    color: var(--primary-green);
 }
 
 
 /* =========================
-   TABLET
+   11. FOOTER
    ========================= */
 
-@media (max-width: 1000px) {
+.site-footer {
+    padding-top: 70px;
 
-    .service-page-hero {
-        min-height: 520px;
+    background: #082d20;
+
+    color: #c8d8d1;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 60px;
+
+    padding-bottom: 55px;
+}
+
+.footer-about img {
+    width: 190px;
+
+    margin-bottom: 20px;
+
+    filter: brightness(0) invert(1);
+}
+
+.footer-about p {
+    max-width: 360px;
+
+    margin-bottom: 6px;
+
+    font-size: 14px;
+}
+
+.footer-grid h3 {
+    color: var(--white);
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+}
+
+.footer-links,
+.footer-contact {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+}
+
+.footer-links a,
+.footer-contact a {
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: var(--white);
+}
+
+.footer-contact p {
+    font-size: 14px;
+}
+
+.footer-bottom {
+    padding: 22px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #9fb4aa;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   12. TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .main-nav,
+    .header-button {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-container {
+        min-height: 72px;
+    }
+
+    .logo img {
+        width: 165px;
     }
 
     .benefits-layout {
@@ -3146,7 +3541,7 @@ button {
     }
 
     .benefits-content {
-        max-width: 750px;
+        position: static;
     }
 
     .service-cta-inner {
@@ -3154,33 +3549,42 @@ button {
 
         align-items: flex-start;
     }
+
+    .service-page-cta .appointment-buttons {
+        width: 100%;
+    }
 }
 
 
 /* =========================
-   MOBILE
+   13. MOBILE
    ========================= */
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
 
     .service-page-hero {
-        min-height: auto;
+        min-height: 600px;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(3, 69, 45, 0.93),
+                rgba(3, 69, 45, 0.70)
+            ),
+            url("../images/physiotherapy-hero.jpg")
+            center/cover no-repeat;
     }
 
     .service-page-hero-content {
-        padding: 75px 0;
+        padding: 55px 0;
     }
 
     .service-page-hero h1 {
-        font-size: 38px;
-
-        line-height: 1.12;
+        font-size: 42px;
     }
 
     .service-page-hero p {
         font-size: 16px;
-
-        line-height: 1.7;
     }
 
     .service-page-hero .hero-buttons {
@@ -3193,94 +3597,84 @@ button {
         width: 100%;
     }
 
-    .service-intro-section {
-        padding: 80px 0;
-    }
-
-    .service-intro-content h2 {
-        font-size: 31px;
-    }
-
-    .service-intro-content p {
-        font-size: 14px;
-
-        line-height: 1.75;
-    }
-
-    .physio-services-section {
-        padding: 80px 0;
-    }
-
-    .physio-services-section .section-heading {
-        margin-bottom: 40px;
+    .service-intro-section,
+    .physio-services-section,
+    .physio-benefits-section,
+    .local-physio-section {
+        padding: 75px 0;
     }
 
     .physio-page-grid {
         grid-template-columns: 1fr;
+    }
 
-        gap: 18px;
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2,
+    .service-intro-content h2,
+    .benefits-content h2,
+    .local-physio-content h2 {
+        font-size: 32px;
     }
 
     .physio-page-card {
         padding: 28px;
     }
 
-    .physio-page-card h3 {
-        font-size: 20px;
-    }
-
-    .physio-benefits-section {
-        padding: 80px 0;
-    }
-
-    .benefits-content h2 {
-        font-size: 31px;
-    }
-
-    .benefits-list {
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-    }
-
-    .local-physio-section {
-        padding: 80px 0;
-    }
-
-    .local-physio-content h2 {
-        font-size: 31px;
-    }
-
-    .local-physio-content p {
-        font-size: 14px;
-
-        line-height: 1.75;
-    }
-
-    .service-page-cta {
-        padding: 65px 0;
-    }
-
-    .service-cta-inner {
-        gap: 30px;
-    }
-
     .service-cta-inner h2 {
-        font-size: 30px;
+        font-size: 32px;
     }
 
-    .service-cta-inner .appointment-buttons {
-        width: 100%;
-
+    .service-page-cta .appointment-buttons {
         flex-direction: column;
     }
 
-    .service-cta-inner .appointment-buttons a {
+    .service-page-cta .appointment-buttons a {
         width: 100%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
     }
 }
 
 
 /* =========================
-   END PHYSIOTHERAPY PAGE
+   14. SMALL MOBILE
    ========================= */
+
+@media (max-width: 520px) {
+
+    .container {
+        width: min(90%, var(--container-width));
+    }
+
+    .service-page-hero {
+        min-height: 650px;
+    }
+
+    .service-page-hero h1 {
+        font-size: 38px;
+    }
+
+    .service-intro-content h2,
+    .section-heading h2,
+    .benefits-content h2,
+    .local-physio-content h2 {
+        font-size: 30px;
+    }
+
+    .physio-page-card h3 {
+        font-size: 20px;
+    }
+
+    .benefit-item {
+        padding: 22px;
+    }
+
+    .footer-grid {
+        gap: 35px;
+    }
+}
