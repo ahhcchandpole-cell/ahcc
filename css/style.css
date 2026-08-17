@@ -4237,3 +4237,77 @@ img {
     }
 
 }
+/* =========================================================
+   CARDIAC PAGE — DESKTOP OVERRIDE
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+    .cr-page-hero {
+        display: block !important;
+        padding: 90px 0 !important;
+        background: linear-gradient(135deg, #eaf7f2, #ffffff) !important;
+    }
+
+    .cr-hero-content {
+        display: block !important;
+        max-width: 850px !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    .cr-intro-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 60px !important;
+        align-items: center !important;
+    }
+
+    .cr-benefit-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    .cr-program-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 60px !important;
+        align-items: center !important;
+    }
+
+    .cr-monitoring-layout {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 60px !important;
+        align-items: center !important;
+    }
+
+    .cr-education-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 60px !important;
+        align-items: center !important;
+    }
+
+    .cr-cta-inner {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 40px !important;
+    }
+
+    .cr-benefit-card {
+        display: block !important;
+        width: auto !important;
+    }
+
+    .cr-intro-image,
+    .cr-program-image,
+    .cr-monitoring-image,
+    .cr-education-image {
+        display: block !important;
+        width: 100% !important;
+    }
+
+}
