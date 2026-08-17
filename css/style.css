@@ -3678,3 +3678,700 @@ img {
         gap: 35px;
     }
 }
+
+/* =========================================================
+   CARDIAC & PULMONARY REHABILITATION PAGE
+   PART 1
+   Hero + Introduction + Benefits + Program
+   ========================================================= */
+
+
+/* ================= CARDIAC HERO ================= */
+
+.cr-page-hero {
+    padding: 120px 0 100px;
+    background: linear-gradient(
+        135deg,
+        #eef8f5,
+        #ffffff
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.cr-page-hero::after {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(0, 128, 96, 0.06);
+    right: -120px;
+    top: -120px;
+}
+
+.cr-hero-content {
+    max-width: 820px;
+    position: relative;
+    z-index: 1;
+}
+
+.cr-hero-content h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.08;
+    margin: 18px 0 24px;
+    color: #123c35;
+}
+
+.cr-hero-content p {
+    max-width: 720px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #526560;
+    margin-bottom: 32px;
+}
+
+.cr-page-hero .hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+
+/* ================= INTRODUCTION ================= */
+
+.cr-intro-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.cr-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.cr-intro-image {
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+    border-radius: 22px;
+}
+
+.cr-intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cr-intro-content {
+    max-width: 620px;
+}
+
+.cr-intro-content h2 {
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.2;
+    color: #123c35;
+    margin: 15px 0 24px;
+}
+
+.cr-intro-content p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #596a66;
+    margin-bottom: 18px;
+}
+
+.cr-intro-content strong {
+    color: #123c35;
+}
+
+
+
+/* ================= BENEFITS SECTION ================= */
+
+.cr-benefit-section {
+    padding: 100px 0;
+    background: #f5faf8;
+}
+
+.cr-benefit-section .section-heading {
+    max-width: 760px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.cr-benefit-section .section-heading span {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #008060;
+    margin-bottom: 12px;
+}
+
+.cr-benefit-section .section-heading h2 {
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.2;
+    color: #123c35;
+    margin: 0 0 18px;
+}
+
+.cr-benefit-section .section-heading p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #60716d;
+}
+
+
+
+/* ================= BENEFIT CARDS ================= */
+
+.cr-benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.cr-benefit-card {
+    background: #ffffff;
+    border: 1px solid rgba(18, 60, 53, 0.08);
+    border-radius: 18px;
+    padding: 30px 25px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.cr-benefit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(18, 60, 53, 0.10);
+}
+
+.cr-card-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: #e7f4ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.cr-benefit-card h3 {
+    font-size: 20px;
+    line-height: 1.3;
+    color: #123c35;
+    margin: 0 0 12px;
+}
+
+.cr-benefit-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #65736f;
+    margin: 0;
+}
+
+
+
+/* ================= PROGRAM SECTION ================= */
+
+.cr-program-section {
+    padding: 105px 0;
+    background: #ffffff;
+}
+
+.cr-program-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.cr-program-content {
+    max-width: 620px;
+}
+
+.cr-program-content h2 {
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.2;
+    color: #123c35;
+    margin: 15px 0 22px;
+}
+
+.cr-program-content > p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #5f706c;
+    margin-bottom: 32px;
+}
+
+
+
+/* ================= PROGRAM LIST ================= */
+
+.cr-program-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.cr-program-item {
+    padding: 20px 22px;
+    border-left: 4px solid #008060;
+    background: #f6faf8;
+    border-radius: 0 12px 12px 0;
+}
+
+.cr-program-item strong {
+    display: block;
+    color: #123c35;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.cr-program-item span {
+    display: block;
+    color: #65736f;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+
+/* ================= PROGRAM IMAGE ================= */
+
+.cr-program-image {
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+    border-radius: 22px;
+}
+
+.cr-program-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* =========================================================
+   CARDIAC & PULMONARY REHABILITATION PAGE
+   PART 2
+   Monitoring + Education + CTA + Responsive
+   ========================================================= */
+
+
+/* ================= MONITORING SECTION ================= */
+
+.cr-monitoring-section {
+    padding: 105px 0;
+    background: #f5faf8;
+}
+
+.cr-monitoring-section .section-heading {
+    max-width: 760px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.cr-monitoring-section .section-heading span {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #008060;
+    margin-bottom: 12px;
+}
+
+.cr-monitoring-section .section-heading h2 {
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.2;
+    color: #123c35;
+    margin: 0 0 18px;
+}
+
+.cr-monitoring-section .section-heading p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #60716d;
+}
+
+
+
+/* ================= MONITORING LAYOUT ================= */
+
+.cr-monitoring-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.cr-monitoring-image {
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    border-radius: 22px;
+}
+
+.cr-monitoring-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+/* ================= MONITORING CONTENT ================= */
+
+.cr-monitoring-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.cr-monitoring-item {
+    background: #ffffff;
+    padding: 22px 25px;
+    border-radius: 14px;
+    border: 1px solid rgba(18, 60, 53, 0.07);
+}
+
+.cr-monitoring-item strong {
+    display: block;
+    color: #123c35;
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.cr-monitoring-item p {
+    color: #65736f;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+
+/* ================= EDUCATION SECTION ================= */
+
+.cr-education-section {
+    padding: 105px 0;
+    background: #ffffff;
+}
+
+.cr-education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.cr-education-image {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 22px;
+}
+
+.cr-education-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cr-education-content {
+    max-width: 620px;
+}
+
+.cr-education-content h2 {
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.2;
+    color: #123c35;
+    margin: 15px 0 24px;
+}
+
+.cr-education-content p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #5f706c;
+    margin-bottom: 18px;
+}
+
+
+
+/* ================= CTA SECTION ================= */
+
+.cr-page-cta {
+    padding: 85px 0;
+    background: #123c35;
+}
+
+.cr-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.cr-cta-content {
+    max-width: 720px;
+}
+
+.cr-cta-content > span {
+    display: block;
+    color: #b8ded3;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.cr-cta-content h2 {
+    color: #ffffff;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.2;
+    margin: 0 0 18px;
+}
+
+.cr-cta-content p {
+    color: #d4e4df;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.cr-page-cta .appointment-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+
+
+/* ================= CTA BUTTON ADJUSTMENTS ================= */
+
+.cr-page-cta .primary-button,
+.cr-page-cta .secondary-button {
+    white-space: nowrap;
+}
+
+
+
+/* ================= CARDIAC PAGE IMAGE FALLBACK ================= */
+
+/*
+   The actual images can be added later.
+
+   Required files:
+
+   cardiac-rehab-hero.jpg
+   cardiac-rehab-assessment.jpg
+   cardiac-rehab-exercise.jpg
+   cardiac-rehab-monitoring.jpg
+*/
+
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1000px) {
+
+    .cr-page-hero {
+        padding: 100px 0 80px;
+    }
+
+    .cr-intro-grid,
+    .cr-program-grid,
+    .cr-monitoring-layout,
+    .cr-education-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+
+    .cr-intro-image,
+    .cr-program-image,
+    .cr-monitoring-image,
+    .cr-education-image {
+        height: 400px;
+    }
+
+
+    .cr-intro-content,
+    .cr-program-content,
+    .cr-education-content {
+        max-width: 100%;
+    }
+
+
+    .cr-benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .cr-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .cr-page-hero {
+        padding: 85px 0 70px;
+    }
+
+
+    .cr-hero-content h1 {
+        font-size: 40px;
+    }
+
+
+    .cr-hero-content p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+
+    .cr-page-hero .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .cr-page-hero .hero-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .cr-intro-section,
+    .cr-benefit-section,
+    .cr-program-section,
+    .cr-monitoring-section,
+    .cr-education-section {
+        padding: 75px 0;
+    }
+
+
+    .cr-intro-image,
+    .cr-program-image,
+    .cr-monitoring-image,
+    .cr-education-image {
+        height: 300px;
+        border-radius: 16px;
+    }
+
+
+    .cr-benefit-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+
+    .cr-benefit-card {
+        padding: 25px 22px;
+    }
+
+
+    .cr-program-item {
+        padding: 18px;
+    }
+
+
+    .cr-monitoring-item {
+        padding: 20px;
+    }
+
+
+    .cr-cta-inner {
+        gap: 35px;
+    }
+
+
+    .cr-page-cta {
+        padding: 70px 0;
+    }
+
+
+    .cr-page-cta .appointment-buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+
+
+    .cr-page-cta .appointment-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .cr-page-hero {
+        padding: 70px 0 60px;
+    }
+
+
+    .cr-hero-content h1 {
+        font-size: 34px;
+    }
+
+
+    .cr-intro-content h2,
+    .cr-program-content h2,
+    .cr-education-content h2,
+    .cr-benefit-section .section-heading h2,
+    .cr-monitoring-section .section-heading h2,
+    .cr-cta-content h2 {
+        font-size: 30px;
+    }
+
+
+    .cr-intro-content p,
+    .cr-program-content > p,
+    .cr-education-content p {
+        font-size: 15px;
+    }
+
+
+    .cr-intro-image,
+    .cr-program-image,
+    .cr-monitoring-image,
+    .cr-education-image {
+        height: 260px;
+    }
+
+
+    .cr-card-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+}
+
